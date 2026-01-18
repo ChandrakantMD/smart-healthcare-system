@@ -4,29 +4,45 @@ export default function PatientLogin() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-100">
-      <div className="bg-white p-10 rounded-2xl shadow-xl w-[420px]">
-        <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+      <div className="bg-white rounded-2xl shadow-2xl w-[420px] p-10">
+        
+        {/* Header */}
+        <h1 className="text-3xl font-bold text-center text-blue-700 mb-2">
           Patient Login
-        </h2>
+        </h1>
+        <p className="text-center text-gray-500 mb-8">
+          Access your health records and services
+        </p>
 
+        {/* Email */}
+        <label className="block text-gray-600 mb-1">Email</label>
         <input
-          placeholder="Patient Email"
-          className="w-full mb-4 px-4 py-2 border rounded-lg"
+          type="email"
+          placeholder="patient@example.com"
+          className="w-full mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
+        {/* Password */}
+        <label className="block text-gray-600 mb-1">Password</label>
         <input
           type="password"
-          placeholder="Password"
-          className="w-full mb-6 px-4 py-2 border rounded-lg"
+          placeholder="••••••••"
+          className="w-full mb-6 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
+        {/* Login Button */}
         <button
           onClick={() => navigate("/patient")}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+          className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
         >
           Login
         </button>
+
+        {/* Footer */}
+        <p className="text-sm text-center text-gray-500 mt-6">
+          New patient? Contact hospital administration
+        </p>
       </div>
     </div>
   );
