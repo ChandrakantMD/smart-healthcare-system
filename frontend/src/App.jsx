@@ -1,9 +1,22 @@
-export default function App(){
-    return(
-        <div className="min-h-screen flex items-center justify-center bg-blue-100">
-            <h1 className="text-3xl font-bold text-blue-700">
-                Smart Healthcare System
-            </h1>
-        </div>
-    );
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import RoleSelect from "./pages/RoleSelect";
+import PatientLogin from "./pages/PatientLogin";
+import DoctorLogin from "./pages/DoctorLogin";
+import PatientDashboard from "./pages/PatientDashboard";
+import DoctorDashboard from "./pages/DoctorDashboard";
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<RoleSelect />} />
+        <Route path="/login/patient" element={<PatientLogin />} />
+        <Route path="/login/doctor" element={<DoctorLogin />} />
+        <Route path="/patient" element={<PatientDashboard />} />
+        <Route path="/doctor" element={<DoctorDashboard />} />
+      </Routes>
+    </>
+  );
 }
