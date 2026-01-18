@@ -5,6 +5,7 @@ import PatientLogin from "./pages/PatientLogin";
 import DoctorLogin from "./pages/DoctorLogin";
 import PatientDashboard from "./pages/PatientDashboard";
 import DoctorDashboard from "./pages/DoctorDashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   return (
@@ -16,6 +17,24 @@ export default function App() {
         <Route path="/login/doctor" element={<DoctorLogin />} />
         <Route path="/patient" element={<PatientDashboard />} />
         <Route path="/doctor" element={<DoctorDashboard />} />
+        <Route
+  path="/patient"
+  element={
+    <ProtectedRoute role="patient">
+      <PatientDashboard />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/doctor"
+  element={
+    <ProtectedRoute role="doctor">
+      <DoctorDashboard />
+    </ProtectedRoute>
+  }
+/>
+
       </Routes>
     </>
   );

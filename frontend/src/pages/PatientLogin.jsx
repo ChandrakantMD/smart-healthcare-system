@@ -32,12 +32,17 @@ export default function PatientLogin() {
         />
 
         {/* Login Button */}
-        <button
-          onClick={() => navigate("/patient")}
-          className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
-        >
-          Login
-        </button>
+       <button
+  onClick={() => {
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("role", "patient");
+    navigate("/patient");
+  }}
+  className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+>
+  Login
+</button>
+
 
         {/* Footer */}
         <p className="text-sm text-center text-gray-500 mt-6">
